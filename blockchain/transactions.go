@@ -15,25 +15,6 @@ type Transaction struct {
 	Outputs []TxOutput
 }
 
-type TxOutput struct {
-	Value  int
-	PubKey string
-}
-
-type TxInput struct {
-	ID  []byte
-	Out int
-	Sig string
-}
-
-func (in *TxInput) CanUnlock(data string) bool {
-	return in.Sig == data
-}
-
-func (out *TxOutput) CanBeUnlocked(data string) bool {
-	return out.PubKey == data
-}
-
 func (tx *Transaction) SetID() {
 	var encoded bytes.Buffer
 	var hash [32]byte
