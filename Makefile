@@ -1,4 +1,8 @@
-add-block:
-	go run main.go add -block "first block"
+get-balance:
+	go run main.go getbalance -address wallace
 print:
-	go run main.go print
+	go run main.go printchain
+create-blockchain-wallace:
+	go run main.go createblockchain -address wallace
+send:
+	go run main.go send -from wallace -to lucia -amount 50
